@@ -7,8 +7,7 @@ inputs:
     description:
       'The major version of the NuGet package to publish'
     required: true
-  name:
-    minorVersion:
+  minorVersion:
       'The minor version of the NuGet package to publish'
     required: true
   publishBeta:
