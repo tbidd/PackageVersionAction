@@ -1,0 +1,49 @@
+description: 'The description of your GitHub Action'
+branding:
+  icon: activity
+  color: orange
+inputs:
+  majorVersion:
+    description:
+      'The major version of the NuGet package to publish'
+    required: true
+  name:
+    minorVersion:
+      'The minor version of the NuGet package to publish'
+    required: true
+  publishBeta:
+    description:
+      'Whether to publish packages as beta'
+    required: false
+  organisation:
+    description:
+      'The organisation to query for the package version'
+    required: true
+  packageName:
+    description:
+      'The name of the package to query for the package version'
+    required: true
+outputs:
+  package_version:
+    description:
+      'The next version of the package'
+  summary-details:
+    description:
+      'A detailed summary of all the projects that were flagged.'
+  updated-metrics:
+    description:
+      'A boolean value, indicating whether or not the action updated metrics.'
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+  - '--majorVersion'
+  - ${{ inputs.majorVersion }}
+  - '--minorVersion'
+  - ${{ inputs.minorVersion }}
+  - '--publishBeta'
+  - ${{ inputs.publishBeta }}
+  - '--organisation'
+  - ${{ inputs.organisation }}
+  - '--packageName'
+  - ${{ inputs.packageName }}
