@@ -1,4 +1,4 @@
-description: 'The description of your GitHub Action'
+description: 'Nuget package versioning action'
 branding:
   icon: activity
   color: orange
