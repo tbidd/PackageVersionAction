@@ -15,4 +15,4 @@ RUN dotnet publish "PackageVersionAction.csproj" -c Release -o /app/publish /p:U
 FROM base AS final
 WORKDIR /app
 COPY --from=publish /app/publish .
-ENTRYPOINT ["dotnet", "PackageVersionAction.dll"]
+ENTRYPOINT ["dotnet", "./PackageVersionAction.dll"]
