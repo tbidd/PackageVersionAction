@@ -23,4 +23,4 @@ LABEL com.github.actions.color="orange"
 # Relayer the .NET SDK, anew with the build output
 FROM mcr.microsoft.com/dotnet/sdk:7.0
 COPY --from=build-env /app/out .
-ENTRYPOINT [ "dotnet", "/PackageVersionAction.dll" ]
+ENTRYPOINT [ "dotnet", "PackageVersionAction.dll" ]
